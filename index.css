@@ -9,6 +9,10 @@
     font-weight: 650;
 }
 
+.semiboldtext {
+    font-weight: 550;
+}
+
 .regulartext {
     font-weight: 350;
 }
@@ -58,7 +62,6 @@ button {
 }
 
 .contactus_button {
-    font-weight: 550;
     color: #F9995D;
 }
 
@@ -199,3 +202,61 @@ button {
     font-size: 16px;
     color: #858EAD;
 }
+
+/*  */
+
+.about_us_block {
+    height: 945px;
+}
+
+.about_us_block_photo {
+    position: absolute;
+    margin: 74px 0 0 114px;
+    border-radius: 2px;
+    width: 902px;
+    height: 669px;
+    box-shadow: 0px 20px 24px -4px rgba(17, 24, 39, 0.1);
+}
+
+.about_us_block_photo img {
+    width: auto;
+    height: 669px;
+}
+
+.about_us_block_info {
+    position: absolute;
+    margin: 147px 0 0 840px;
+    border-radius: 2px;
+    background-color: #2947A9;
+    color: #ffffff;
+    width: 488px;
+    height: 523px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_us_block_info h4 {
+    margin: 50px 0 0 40px;
+    font-size: 36px;
+}
+.about_us_block_info span {
+    margin: 37px 60px 0 40px;
+    font-size: 20px;
+}
+
+.about_us_block_info button {
+    height: 53px;
+    width: 219px;
+    margin: 74px 0 0 40px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.about_us_block_info button p {
+    color: #2947A9;
+    font-size: 18px;
+}
+
+/*  */
+
