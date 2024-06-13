@@ -22,14 +22,15 @@
                     <h1 class="boldtext"><i>The</i>Box</h1>
                 </div>
                 <div class="navigation_button">
-                    <button>Home</button>
-                    <button>About Us</button>
-                    <button>Projects</button>
-                    <button>Services</button>
+                    <button id="navigation_home_button">Home</button>
+                    <button id="navigation_about_button">About Us</button>
+                    <button id="navigation_project_button">Projects</button>
+                    <button id="navigation_services_button">Services</button>
                     <div class="contact_us_button">
-                        <button><span class="semiboldtext">Contact Us</span>
+                        <button id="navigation_contact_button">
+                            <span class="semiboldtext">Contact Us</span>
+                        </button>
                     </div>
-                    </button>
                 </div>
             </div>
         </header>
@@ -46,9 +47,10 @@
                             <span class="regulartext">The National University of Architecture</span>
                         </div>
                         <div class="main_promo_button">
-                            <button class="main_promo_but_back"><img src="source/arrow.svg"
-                                    alt="building image">Back</button>
-                            <button class="main_promo_but_next">Next<img src="source/arrow.svg"></button>
+                            <button id="main_promo_back_button" class="main_promo_but_back"><img src="source/arrow.svg"
+                                    alt="left-turned arrow">Back</button>
+                            <button id="main_promo_next_button" class="main_promo_but_next">Next<img
+                                    src="source/arrow.svg" alt="right-turned arrow"></button>
                         </div>
                     </div>
                 </div>
@@ -60,21 +62,21 @@
                 <h1 class="boldtext">Our Reputation</h1>
                 <div class="reputation_reason_div_block">
                     <div class="reputation_reason_block">
-                        <img src="source/headphones_logo.svg">
+                        <img src="source/headphones_logo.svg" alt="headphones logo">
                         <div class="reputation_reason_block_text">
                             <span class="boldtext">Best Services</span>
                             <p>Nullam senectus porttitor in eget. Eget rutrum leo interdum.</p>
                         </div>
                     </div>
                     <div class="reputation_reason_block">
-                        <img src="source/headphones_logo.svg">
+                        <img src="source/headphones_logo.svg" alt="headphones logo">
                         <div class="reputation_reason_block_text">
                             <span class="boldtext">Best Teams</span>
                             <p>Cursus semper tellus volutpat aliquet lacus. </p>
                         </div>
                     </div>
                     <div class="reputation_reason_block">
-                        <img src="source/pencil_logo.svg">
+                        <img src="source/pencil_logo.svg" alt="pencil logo">
                         <div class="reputation_reason_block_text">
                             <span class="boldtext">Best Designs</span>
                             <p>Ultricies at ipsum nunc, tristique nam lectus.</p>
@@ -95,7 +97,7 @@
                     <span>We've matured into an industry leader and trusted resource for those seeking quality,
                         innovation
                         and reliability when building in the U.S.</span>
-                    <button class="semiboldtext">
+                    <button id="about_us_history_button" class="semiboldtext">
                         <p class="semiboldtext">More on Our History</p>
                     </button>
                 </div>
@@ -107,39 +109,33 @@
             <div class="services_block">
                 <h4 class="boldtext">Services</h4>
                 <div class="services_info">
-
                     <div class="services_info_white">
-                        <img src="source/construction_icon.svg">
+                        <img src="source/construction_icon.svg" alt="building logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Construction</span>
                     </div>
-
                     <div class="services_info_blue">
-                        <img src="source/renovation_icon.svg">
+                        <img src="source/renovation_icon.svg" alt="logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Renovation</span>
                     </div>
-
                     <div class="services_info_white">
-                        <img src="source/consultation_icon.svg">
+                        <img src="source/consultation_icon.svg" alt="handshake logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Consultation</span>
                     </div>
-
                     <div class="services_info_blue">
-                        <img src="source/repair_services_icon.svg">
+                        <img src="source/repair_services_icon.svg" alt="toolbox logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Repair Services</span>
                     </div>
-
                     <div class="services_info_white">
-                        <img src="source/architecture_icon.svg">
+                        <img src="source/architecture_icon.svg" alt="circlet logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Architecture</span>
                     </div>
-
                     <div class="services_info_blue">
-                        <img src="source/electric_icon.svg">
+                        <img src="source/electric_icon.svg" alt="socket logo">
                         <div class="services_line"></div>
                         <span class="semiboldtext">Electric</span>
                     </div>
@@ -160,7 +156,6 @@
                             <span>Happy Clients</span>
                         </div>
                     </div>
-
                     <div class="achievements_left_projects">
                         <img src="source/achievement_projects_logo.svg" alt="notepad logo">
                         <h1 class="semiboldtext">123</h1>
@@ -169,7 +164,6 @@
                             <span>Projects Completed</span>
                         </div>
                     </div>
-
                     <div class="achievements_left_awards">
                         <img src="source/achievement_awards_logo.svg" alt="golden cup logo">
                         <h1 class="semiboldtext">37</h1>
@@ -178,7 +172,6 @@
                             <span>Awards Win</span>
                         </div>
                     </div>
-
                     <div class="achievements_left_years">
                         <img src="source/achievement_years_logo.svg" alt="blueprint with pencil logo">
                         <h1 class="semiboldtext">30</h1>
@@ -187,22 +180,195 @@
                             <span>Years in Business</span>
                         </div>
                     </div>
-
                 </div>
                 <div class="achievements_right">
                     <div class="achievements_right_info">
                         <h2 class="boldtext">30 Years Experience</h2>
                         <span>Our company has been the leading provided construction services to clients throughout the
                             USA since 1988.</span>
-                        <button class="semiboldtext">
+                        <button id="achievement_contact_button" class="semiboldtext">
                             <img src="source/achievement_clients_logo.svg" alt="handshake logo">
                             Contact Us
                         </button>
                     </div>
                 </div>
             </div>
-
         </section>
+
+        <section>
+            <div class="consultation_ad_block">
+                <div class="consultation_ad_left">
+                    <h4 class="boldtext">Free consultation with exceptional quality</h4>
+                    <div class="consultation_ad_left_info">
+                        <span>Just one call away:</span> <a href="#">+84 1102 2703</a>
+                    </div>
+                </div>
+                <div class="consultation_ad_right">
+                    <button id="consultation_contact_button" class="semiboldtext">Get your consultation</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="project_block">
+                <div class="project_left_radio_block">
+                    <div class="project_left_radio">
+                        <span class="boldtext">Projects</span>
+                        <div class="form_radio_group">
+                            <input id="radio_all" type="radio" name="radio" value="all" checked>
+                            <div class="form_radio_group_line"></div>
+                            <label for="radio_all">All</label>
+                        </div>
+                        <div class="form_radio_group">
+                            <input id="radio_commerical" type="radio" name="radio" value="commercial">
+                            <div class="form_radio_group_line"></div>
+                            <label for="radio_commerical">Commercial</label>
+                        </div>
+                        <div class="form_radio_group">
+                            <input id="radio_residential" type="radio" name="radio" value="residential">
+                            <div class="form_radio_group_line"></div>
+                            <label for="radio_residential">Residential</label>
+                        </div>
+                        <div class="form_radio_group">
+                            <input id="radio_other" type="radio" name="radio" value="other">
+                            <div class="form_radio_group_line"></div>
+                            <label for="radio_other">Other</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_right">
+                    <div class="project_right_slider">
+
+                        <div class="project_slider_card">
+                            <img src="source/project_hotel.svg" alt="building example">
+                            <div class="project_slider_card_info">
+                                <p class="semiboldtext">Wildstone Infra Hotel</p>
+                                <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                            </div>
+                        </div>
+                        <div class="project_slider_card">
+                            <img src="source/project_wish.svg" alt="building example">
+                            <div class="project_slider_card_info">
+                                <p class="semiboldtext">Wish Stone Building</p>
+                                <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                            </div>
+                        </div>
+                        <div class="project_slider_card">
+                            <img src="source/project_house.svg" alt="building example">
+                            <div class="project_slider_card_info">
+                                <p class="semiboldtext">Mr. Parkinston’s House</p>
+                                <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                            </div>
+                        </div>
+                        <div class="project_slider_card">
+                            <img src="source/project_oregano.svg" alt="building example">
+                            <div class="project_slider_card_info">
+                                <p class="semiboldtext">Oregano Height</p>
+                                <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project_right_button">
+                        <button id="project_back_button" class="project_right_but_back">
+                            <img src="source/arrow.svg" alt="left-turned arrow">
+                            Back
+                        </button>
+                        <div class="project_right_circle_nav">
+                            <div id="circle_1" class="project_circle"></div>
+                            <div id="circle_2" class="project_circle"></div>
+                            <div id="circle_3" class="project_circle"></div>
+                            <div id="circle_4" class="project_circle"></div>
+                            <div id="circle_5" class="project_circle"></div>
+                        </div>
+                        <button id="project_next_button" class="project_right_but_next">
+                            Next
+                            <img src="source/arrow.svg" alt="right-turned arrow">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="cta_block">
+                <div class="cta_info">
+                    <h2>What can us do for you?</h2>
+                    <h3 class="regulartext">
+                        We are ready to work on a project of any complexity, whether it's commercial or residential.
+                    </h3>
+                </div>
+                <div class="cta_input">
+                    <form class="cta_input_form" id="cta_form">
+                        <input class="cta_input_field" name="cta_name" type="text" placeholder="Your Name*">
+                        <input class="cta_input_field" name="cta_email" type="text" placeholder="Email*">
+                        <select class="cta_input_field" name="cta_reason">
+                            <option value="default" selected disabled>Reason for Contacting</option>
+                            <option value="first">First Value</option>
+                            <option value="second">Second Value</option>
+                            <option value="third">Third Value</option>
+                        </select>
+                        <input class="cta_input_field" name="cta_phone" type="text" placeholder="Phone">
+                        <div class="cta_input_textarea_group">
+                            <textarea class="cta_textarea_field" id="cta_textarea" placeholder="Message"></textarea>
+                            <span>* indicates a required field</span>
+                            <div>
+                                <input class="cta_form_button" name="cta_button" type="button" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="bottom_info">
+                <div class="bottom_info_left">
+                    <div class="bottom_left_content">
+                        <div class="bottom_left_content_p">
+                            <p class="semiboldtext">ADDRESS: </p>
+                            <p class="semiboldtext">PHONE: </p>
+                            <p class="semiboldtext">EMAIL: </p>
+                        </div>
+                        <div class="bottom_left_content_p_info">
+                            <p class="regulartext">6391 Elgin St. Celina, Delaware 10299</p>
+                            <p class="regulartext">+84 1102 2703</p>
+                            <p class="regulartext">hello@thebox.com</p>
+                        </div>
+                    </div>
+                    <div class="bottom_left_content_img">
+                        <img src="source/theboxlogo.svg" alt="company logo made of rectangles of shades blue">
+                        <h1 class="boldtext"><i>The</i>Box</h1>
+                    </div>
+                </div>
+                <div class="bottom_info_right">
+                    <div class="bottom_right_content">
+                        <p class="semiboldtext">NEWSLETTER:</p>
+                        <div class="bottom_email_subscribe">
+                            <form id="email_subscribe">
+                                <input class="bottom_input_field" name="email_subscribe_input" type="text"
+                                    placeholder="Your email here">
+                                <input class="bottom_form_button" name="email_subscribe_button" type="button"
+                                    value="Subscribe">
+                            </form>
+                        </div>
+                        <div class="bottom_right_content_social">
+                            <p class="semiboldtext">SOCIAL:</p>
+                            <div class="bottom_right_content_img">
+                                <a href="#"><img src="source/facebook_logo.svg" alt="facebook logo"></a>
+                                <a href="#"><img src="source/in_logo.svg" alt="in logo"></a>
+                                <a href="#"><img src="source/twitter_logo.svg" alt="twitter bird logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <footer>
+            <div class="build_footer">
+                <span class="regulartext">TheBox Company © 2022. All Rights Reserved</span>
+            </div>
+        </footer>
+
     </div>
 </body>
 
