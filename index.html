@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -17,17 +18,17 @@
 
         <header>
             <div class="navigation_block">
-                <div class="navigation_logo">
+                <div class="navigation_left">
                     <img src="source/theboxlogo.svg" alt="company logo made of rectangles of shades blue">
                     <h1 class="boldtext"><i>The</i>Box</h1>
                 </div>
-                <div class="navigation_button">
-                    <button id="navigation_home_button">Home</button>
-                    <button id="navigation_about_button">About Us</button>
-                    <button id="navigation_project_button">Projects</button>
-                    <button id="navigation_services_button">Services</button>
+                <div class="navigation_right">
+                    <button id="navigation_home_button" onclick="clickScrollHandler(id)">Home</button>
+                    <button id="navigation_about_button" onclick="clickScrollHandler(id)">About Us</button>
+                    <button id="navigation_project_button" onclick="clickScrollHandler(id)">Projects</button>
+                    <button id="navigation_services_button" onclick="clickScrollHandler(id)">Services</button>
                     <div class="contact_us_button">
-                        <button id="navigation_contact_button">
+                        <button id="navigation_contact_button" onclick="clickScrollHandler(id)">
                             <span class="semiboldtext">Contact Us</span>
                         </button>
                     </div>
@@ -87,26 +88,25 @@
         </section>
 
         <section>
-            <div class="about_us_block">
+            <div class="about_us_block" id="navigation_about_button_block">
                 <div class="about_us_img"><img src="source/about_us_photo.svg" alt="gray-haired man with glasses">
                 </div>
                 <div class="about_us_info">
                     <h4 class="boldtext">About us</h4>
                     <span>For more than 30 years we have been delivering world-class construction and we've built many
                         lasting relationships along the way. </span>
-                    <span>We've matured into an industry leader and trusted resource for those seeking quality,
+                    <p>We've matured into an industry leader and trusted resource for those seeking quality,
                         innovation
-                        and reliability when building in the U.S.</span>
-                    <button id="about_us_history_button" class="semiboldtext">
-                        <p class="semiboldtext">More on Our History</p>
-                    </button>
+                        and reliability when building in the U.S.</p>
+                    <button id="navigation_project_button" class="semiboldtext" onclick="clickScrollHandler(id)">More on
+                        Our history</button>
                 </div>
             </div>
         </section>
 
 
         <section>
-            <div class="services_block">
+            <div class="services_block" id="navigation_services_button_block">
                 <h4 class="boldtext">Services</h4>
                 <div class="services_info">
                     <div class="services_info_white">
@@ -186,7 +186,7 @@
                         <h2 class="boldtext">30 Years Experience</h2>
                         <span>Our company has been the leading provided construction services to clients throughout the
                             USA since 1988.</span>
-                        <button id="achievement_contact_button" class="semiboldtext">
+                        <button id="navigation_contact_button" class="semiboldtext" onclick="clickScrollHandler(id)">
                             <img src="source/achievement_clients_logo.svg" alt="handshake logo">
                             Contact Us
                         </button>
@@ -204,72 +204,714 @@
                     </div>
                 </div>
                 <div class="consultation_ad_right">
-                    <button id="consultation_contact_button" class="semiboldtext">Get your consultation</button>
+                    <button id="navigation_contact_button" class="semiboldtext" onclick="clickScrollHandler(id)">Get
+                        your consultation</button>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="project_block">
+            <div class="project_block" id="navigation_project_button_block">
                 <div class="project_left_radio_block">
                     <div class="project_left_radio">
                         <span class="boldtext">Projects</span>
-                        <div class="form_radio_group">
-                            <input id="radio_all" type="radio" name="radio" value="all" checked>
-                            <div class="form_radio_group_line"></div>
-                            <label for="radio_all">All</label>
-                        </div>
-                        <div class="form_radio_group">
-                            <input id="radio_commerical" type="radio" name="radio" value="commercial">
-                            <div class="form_radio_group_line"></div>
-                            <label for="radio_commerical">Commercial</label>
-                        </div>
-                        <div class="form_radio_group">
-                            <input id="radio_residential" type="radio" name="radio" value="residential">
-                            <div class="form_radio_group_line"></div>
-                            <label for="radio_residential">Residential</label>
-                        </div>
-                        <div class="form_radio_group">
-                            <input id="radio_other" type="radio" name="radio" value="other">
-                            <div class="form_radio_group_line"></div>
-                            <label for="radio_other">Other</label>
-                        </div>
+                        <form id="form_radio" onchange="projectRadioFormHandler()">
+                            <div class="form_radio_group">
+                                <input id="radio_all" type="radio" name="radio" value="all" checked>
+                                <div class="form_radio_group_line"></div>
+                                <label for="radio_all">All</label>
+                            </div>
+                            <div class="form_radio_group">
+                                <input id="radio_commerical" type="radio" name="radio" value="commercial">
+                                <div class="form_radio_group_line"></div>
+                                <label for="radio_commerical">Commercial</label>
+                            </div>
+                            <div class="form_radio_group">
+                                <input id="radio_residential" type="radio" name="radio" value="residential">
+                                <div class="form_radio_group_line"></div>
+                                <label for="radio_residential">Residential</label>
+                            </div>
+                            <div class="form_radio_group">
+                                <input id="radio_other" type="radio" name="radio" value="other">
+                                <div class="form_radio_group_line"></div>
+                                <label for="radio_other">Other</label>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="project_right">
-                    <div class="project_right_slider">
 
-                        <div class="project_slider_card">
-                            <img src="source/project_hotel.svg" alt="building example">
-                            <div class="project_slider_card_info">
-                                <p class="semiboldtext">Wildstone Infra Hotel</p>
-                                <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                <div class="project_right">
+                    <!-- slide all 1 -->
+                    <div class="project_all1" id="project_all1" style="display: block">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wildstone Infra Hotel</p>
+                                    <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project_slider_card">
-                            <img src="source/project_wish.svg" alt="building example">
-                            <div class="project_slider_card_info">
-                                <p class="semiboldtext">Wish Stone Building</p>
-                                <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wish Stone Building</p>
+                                    <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project_slider_card">
-                            <img src="source/project_house.svg" alt="building example">
-                            <div class="project_slider_card_info">
-                                <p class="semiboldtext">Mr. Parkinston’s House</p>
-                                <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Mr. Parkinston’s House</p>
+                                    <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project_slider_card">
-                            <img src="source/project_oregano.svg" alt="building example">
-                            <div class="project_slider_card_info">
-                                <p class="semiboldtext">Oregano Height</p>
-                                <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Oregano Height</p>
+                                    <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- slide all 2 -->
+                    <div class="project_all2" id="project_all2" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wildstone Infra Hotel 2</p>
+                                    <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wish Stone Building 2</p>
+                                    <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Mr. Parkinston’s House 2</p>
+                                    <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Oregano Height 2</p>
+                                    <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide all 3 -->
+                    <div class="project_all3" id="project_all3" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wildstone Infra Hotel 3</p>
+                                    <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wish Stone Building 3</p>
+                                    <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Mr. Parkinston’s House 3</p>
+                                    <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Oregano Height 3</p>
+                                    <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide all 4 -->
+                    <div class="project_all4" id="project_all4" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wildstone Infra Hotel 4</p>
+                                    <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wish Stone Building 4</p>
+                                    <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Mr. Parkinston’s House 4</p>
+                                    <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Oregano Height 4</p>
+                                    <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide all 5 -->
+                    <div class="project_all5" id="project_all5" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wildstone Infra Hotel 5</p>
+                                    <span class="regulartext">2715 Ash Dr. San Jose, South Dakota</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Wish Stone Building 5</p>
+                                    <span class="regulartext">2972 Westheimer Rd. Santa Ana, Illinois </span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Mr. Parkinston’s House 5</p>
+                                    <span class="regulartext">3517 W. Gray St. Utica, Pennsylvania</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Oregano Height 5</p>
+                                    <span class="regulartext">2464 Royal Ln. Mesa, New Jersey </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!-- slide commercial 1 -->
+                    <div class="project_сommercial1" id="project_commercial1" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial 1</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide commercial 2 -->
+                    <div class="project_сommercial2" id="project_commercial2" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial 2</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide commercial 3 -->
+                    <div class="project_сommercial3" id="project_commercial3" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial 3</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide commercial 4 -->
+                    <div class="project_сommercial4" id="project_commercial4" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial 4</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide commercial 5 -->
+                    <div class="project_сommercial5" id="project_commercial5" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial 5</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Commercial</p>
+                                    <span class="regulartext">Commercial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!-- slide residential 1 -->
+                    <div class="project_residential1" id="project_residential1" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential 1</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide residential 2 -->
+                    <div class="project_residential2" id="project_residential2" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential 2</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide residential 3 -->
+                    <div class="project_residential3" id="project_residential3" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential 3</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide residential 4 -->
+                    <div class="project_residential4" id="project_residential4" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential 4</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide residential 5 -->
+                    <div class="project_residential5" id="project_residential5" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential 5</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Residential</p>
+                                    <span class="regulartext">Residential</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!-- slide other 1 -->
+                    <div class="project_other1" id="project_other1" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other 1</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide other 2 -->
+                    <div class="project_other2" id="project_other2" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other 2</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide other 3 -->
+                    <div class="project_other3" id="project_other3" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other 3</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide other 4 -->
+                    <div class="project_other4" id="project_other4" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other 4</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide other 5 -->
+                    <div class="project_other5" id="project_other5" style="display: none">
+                        <div class="project_right_slider">
+                            <div class="project_slider_card">
+                                <img src="source/project_hotel.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other 5</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_wish.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_house.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                            <div class="project_slider_card">
+                                <img src="source/project_oregano.svg" alt="building example">
+                                <div class="project_slider_card_info">
+                                    <p class="semiboldtext">Other</p>
+                                    <span class="regulartext">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
                     <div class="project_right_button">
-                        <button id="project_back_button" class="project_right_but_back">
+                        <button id="project_back_button" class="project_right_but_back"
+                            onclick="projectButtonBackHandle()">
                             <img src="source/arrow.svg" alt="left-turned arrow">
                             Back
                         </button>
@@ -280,7 +922,8 @@
                             <div id="circle_4" class="project_circle"></div>
                             <div id="circle_5" class="project_circle"></div>
                         </div>
-                        <button id="project_next_button" class="project_right_but_next">
+                        <button id="project_next_button" class="project_right_but_next"
+                            onclick="projectButtonNextHandle()">
                             Next
                             <img src="source/arrow.svg" alt="right-turned arrow">
                         </button>
@@ -290,7 +933,7 @@
         </section>
 
         <section>
-            <div class="cta_block">
+            <div class="cta_block" id="navigation_contact_button_block">
                 <div class="cta_info">
                     <h2>What can us do for you?</h2>
                     <h3 class="regulartext">
@@ -298,21 +941,22 @@
                     </h3>
                 </div>
                 <div class="cta_input">
-                    <form class="cta_input_form" id="cta_form">
-                        <input class="cta_input_field" name="cta_name" type="text" placeholder="Your Name*">
-                        <input class="cta_input_field" name="cta_email" type="text" placeholder="Email*">
+                    <form class="cta_input_form" id="cta_form" onchange="ctaFormHandler()">
+                        <input class="cta_input_field" name="cta_name" type="text" placeholder="Name*" />
+                        <input class="cta_input_field" name="cta_email" type="text" placeholder="Email*" />
                         <select class="cta_input_field" name="cta_reason">
-                            <option value="default" selected disabled>Reason for Contacting</option>
-                            <option value="first">First Value</option>
-                            <option value="second">Second Value</option>
-                            <option value="third">Third Value</option>
+                            <option value="empty" selected disabled>Reason for Contacting</option>
+                            <option value="reason1">Reason 1</option>
+                            <option value="reason2">Reason 2</option>
+                            <option value="reason3">Reason 3</option>
                         </select>
                         <input class="cta_input_field" name="cta_phone" type="text" placeholder="Phone">
                         <div class="cta_input_textarea_group">
                             <textarea class="cta_textarea_field" id="cta_textarea" placeholder="Message"></textarea>
                             <span>* indicates a required field</span>
                             <div>
-                                <input class="cta_form_button" name="cta_button" type="button" value="Submit">
+                                <input class="cta_form_button" name="cta_button" type="button" value="Submit"
+                                    onclick="ctaButtonHandler()" id="cta_form_submit_button" disabled>
                             </div>
                         </div>
                     </form>
@@ -344,11 +988,12 @@
                     <div class="bottom_right_content">
                         <p class="semiboldtext">NEWSLETTER:</p>
                         <div class="bottom_email_subscribe">
-                            <form id="email_subscribe">
+                            <form id="email_subscribe_form" onchange="contactFormHandler()">
                                 <input class="bottom_input_field" name="email_subscribe_input" type="text"
                                     placeholder="Your email here">
                                 <input class="bottom_form_button" name="email_subscribe_button" type="button"
-                                    value="Subscribe">
+                                    value="Subscribe" id="email_subscribe_button" onclick="contactButtonHandler()"
+                                    disabled>
                             </form>
                         </div>
                         <div class="bottom_right_content_social">
