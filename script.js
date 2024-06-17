@@ -50,12 +50,13 @@ function ctaButtonHandler() {
 
 let previousProjectValue = 'all';
 let currentProjectButtonValue = 1;
+let currentMainPromoValue = 1;
+
 function projectRadioFormHandler() {
     const currentProjectValue = document.getElementById('form_radio').radio.value;
     document.getElementById('project_' + previousProjectValue + currentProjectButtonValue).style.display = 'none';
     document.getElementById('project_' + currentProjectValue + currentProjectButtonValue).style.display = 'block';
     previousProjectValue = currentProjectValue;
-    // 2947A9
 }
 
 function projectButtonBackHandle() {
@@ -73,7 +74,7 @@ function projectButtonBackHandle() {
 }
 
 function projectButtonNextHandle() {
-    if (currentProjectButtonValue < 5) {
+    if (currentProjectButtonValue != 5) {
         const radioProjectValue = document.getElementById('form_radio').radio.value;
         document.getElementById('project_' + radioProjectValue + currentProjectButtonValue).style.display = 'none';
         currentProjectButtonValue = currentProjectButtonValue + 1;
@@ -86,3 +87,38 @@ function projectButtonNextHandle() {
     }
 }
 
+function projectButtonNextHandle() {
+    if (currentProjectButtonValue != 5) {
+        const radioProjectValue = document.getElementById('form_radio').radio.value;
+        document.getElementById('project_' + radioProjectValue + currentProjectButtonValue).style.display = 'none';
+        currentProjectButtonValue = currentProjectButtonValue + 1;
+        document.getElementById('project_' + radioProjectValue + currentProjectButtonValue).style.display = 'block';
+        document.getElementById('project_back_button').disabled = false;
+        document.getElementById('circle_' + (currentProjectButtonValue - 1)).style.backgroundColor = '#F6F8F7';
+        document.getElementById('circle_' + currentProjectButtonValue).style.backgroundColor = '#2947A9';
+    } else {
+        document.getElementById('project_next_button').disabled = true;
+    }
+}
+
+function mainButtonBackHandle() {
+    if (currentMainPromoValue > 1) {
+        document.getElementById('main_promo' + currentMainPromoValue).style.display = 'none';
+        currentMainPromoValue = currentMainPromoValue - 1;
+        document.getElementById('main_promo' + currentMainPromoValue).style.display = 'flex';
+        document.getElementById('main_promo_next_button' + currentMainPromoValue).disabled = false;
+    } else {
+        document.getElementById('main_promo_back_button' + currentMainPromoValue).disabled = true;
+    }
+}
+
+function mainButtonNextHandle() {
+    if (currentMainPromoValue != 3) {
+        document.getElementById('main_promo' + currentMainPromoValue).style.display = 'none';
+        currentMainPromoValue = currentMainPromoValue + 1;
+        document.getElementById('main_promo' + currentMainPromoValue).style.display = 'flex';
+        document.getElementById('main_promo_back_button' + currentMainPromoValue).disabled = false;
+    } else {
+        document.getElementById('main_promo_next_button' + currentMainPromoValue).disabled = true;
+    }
+}
